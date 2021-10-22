@@ -1,0 +1,76 @@
+.contact {
+    color: white;
+    background-color: black;
+    .contact-section {
+        padding-top: 30px;
+        padding-bottom: 100px;
+    }
+    .form-area {
+        margin: 0 auto;
+        width: 70.3%;
+        max-width: 900px;
+    }
+    .contact-form {
+        padding-top: 30px;
+    }
+    .row {
+        padding-top: 20px;
+        dt {
+            label {
+                font-size: 16px;
+                color: white;
+            }
+        }
+        dd {
+            width: 100%;
+            input {
+                background-color: black;
+                color: white;
+                height: 50px;
+                width: 100%;
+                @include overTab {
+                    width: 935px;
+                }
+            }
+            textarea {
+                background-color: black;
+                color: white;
+                padding-top: 18px;
+                width: 100%;
+                height: 150px;
+                @include overTab {
+                    height: 240px;
+                    width: 935px;
+                }
+            }
+        }
+    }
+    .privacy-policy {
+        padding-top: 61px;
+        color: white;
+        text-align: center;
+        .link {
+            text-decoration: underline;
+        }
+    }
+    .checkbox {
+        display: flex;
+        justify-content: center;
+        margin-top: 33px;
+    }
+    .submit-btn {
+        width: 169px;
+        margin: 0 auto;
+    }
+    .submit {
+        color: white;
+        border-radius: 5px;
+        background-color: #B8860B;
+        margin-top: 48px;
+        width: 200px;
+        height: 50px;
+        border-color: transparent;
+    }
+
+
+}

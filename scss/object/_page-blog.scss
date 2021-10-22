@@ -1,0 +1,138 @@
+.article {
+    background-color: black;
+    .breadcrumb {
+        margin-left: 44px;
+        @include overTab {
+            margin-left: 30px;
+        }
+    }
+    .article-cont {
+        width: 80%;
+        margin: 0 auto;
+        @include overTab {
+            width: auto;
+            margin: 0;
+        }
+    }
+    .article-list {
+        margin-top: 80px;
+        @include overTab {
+            margin-right: 120px;
+        }
+    }
+    .article-item {
+        @include overTab {
+            margin-left: 111px;
+            display: flex;
+
+        }
+        #post-43 {
+            @include overTab {
+                width: 254px;
+
+            }
+        }
+        #post-74 {
+            @include overTab {
+                width: 254px;
+
+            }
+        }
+        #post-57 {
+            @include overTab {
+                width: 254px;
+            }
+        }
+        #post-53 {
+            @include overTab {
+                width: 254px;
+
+            }
+        }
+        + .article-item {
+            margin-top: 50px;
+        }
+    }
+    .article-flex {
+        display: flex;
+        flex-direction: column-reverse;
+        @include overTab {
+            flex-direction: row-reverse;
+        }
+    }
+    .article-text {
+        @include overTab {
+            margin-left: 31px;
+        }
+        .title {
+            margin-top: 15px;
+            text-decoration: underline;
+            font-size: 22px;
+            @include overTab {
+                font-size: 28px;
+            }
+        }
+        .desc {
+            margin-top: 10px;
+            @include overTab {
+                margin-top: 0;
+            }
+        }
+    }
+    .article-image {
+        margin-top: 20px;
+        position: relative;
+        @include overTab {
+            width: 254px;
+            margin-top: 0;
+        }
+    }
+    .category {
+        position: absolute;
+        background-color: #4D0000;
+        width: 120px;
+        text-align: center;
+        height: 32px;
+        line-height: 32px;
+        font-size: 15px;
+    }
+    //ページネーション
+    .article-pager {
+        padding-bottom: 120px;
+        padding-top: 76px;
+        .inner {
+            display: flex;
+            justify-content: center;
+        }
+        //数字のボックス
+        .number {
+            width: 46px;
+            height: 46px;
+            border: 2px solid #B8860BEA;
+            text-align: center;
+            line-height: 46px;
+            + .number {
+                margin-left: 20px;
+            }
+            span {
+                color: white;
+            }
+        }
+        .-current {//currentは現在の意味→現在のページ
+            background-color: #B8860BEA;
+        }
+        //ドットのボックス
+        .dots {
+            width: 46px;
+            height: 46px;
+            span {
+                height: 46px;
+                color: white;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

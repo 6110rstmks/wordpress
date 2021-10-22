@@ -1,0 +1,78 @@
+.features-wrapper {
+    background-color: cl(black);
+    color: cl(white);
+    .sub {
+    }
+    .features-cont {
+        padding-top: 60px;
+    }
+    .features-list {
+    }
+    .features-item {
+        display: flex;
+        flex-direction: column-reverse;
+        @include overTab {
+            &:nth-child(odd) {
+                flex-direction: row-reverse;
+            }
+            &:nth-child(even) {
+                flex-direction: row;
+            }
+        }
+        +.features-item {
+            padding-top: 60px;
+            @include overTab {
+                padding-top: 0;
+            }
+        }
+        .features-text {
+            @include overTab {
+                //↓flex:1;が指定されているということは、親要素にdisplay:flex;が指定されているということ
+                //flex: 1;はflex-grow: 1;と同値でありfeatures-imgに50%指定していることから、その残りの50％にflexgrow1が指定され計算式より余白をfeatures-textが埋めつくす
+                flex: 1;
+            }
+        }
+        .features-text-sub {
+            @include overTab {
+                margin-left: 43px;
+            }
+        }
+        .features-title {
+            font-size: 18px;
+            color: cl(beige);
+            margin-top: 26px;
+            margin-left: 28.5px;
+            @include overTab {
+                margin-top: 49px;
+                font-size: 30px;
+                margin-left: 0;
+            }
+        }
+        .features-desc {
+            margin-top: 55px;
+            font-size: 16px;
+            text-align: justify;
+            margin-right: 27px;
+            margin-left: 28px;
+            @include overTab {
+                margin-right: 42px;
+                font-size: 21px;
+                margin-left: 0;
+            }
+        }
+        .features-img {
+            @include overTab {
+                width: 50%;
+                flex: 1;
+            }
+        }
+    }
+    .features-link {
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 60px;
+        @include overTab {
+            margin-top: 65px;
+        }
+    }
+}

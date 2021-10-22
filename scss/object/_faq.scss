@@ -1,0 +1,57 @@
+.faq-wrapper {
+    background-color: cl(black);
+    padding-bottom: 80px;
+    .sub {
+        text-transform: uppercase;
+    }
+    .faq-list {
+        margin: 0 auto;
+        margin-top: 60px;
+        background-color: cl(white);
+        width: percentage(907/1280);
+    }
+    .faq-item {
+        a {
+            display: block;
+            text-align: center;
+            color: cl(black);
+            padding: 14px;
+            @include overTab {
+                padding: 20px 0;
+            }
+        }
+        .check-in {
+            @include overTab {
+                padding-right: 65px;
+            }
+        }
+        .pet {
+            @include overTab {
+                padding-right: 42px;
+            }
+        }
+        .bag {
+            @include overTab {
+                padding-right: 38px;
+            }
+        }
+        .detail {
+            color: cl(black);
+            padding-top: 26px;
+            padding-bottom: 26px;
+            border: 1px solid #E5E5E5;
+            background-color: cl(lightgrey);
+            padding: 13px 8px 12px 15px;
+            @include overTab {
+                padding-left: 50px;
+
+            }
+        }
+        .faq-detail {
+            text-align: center;
+            @include overTab {
+                padding-right: 50px;
+            }
+        }
+    }
+}

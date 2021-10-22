@@ -1,0 +1,96 @@
+.plan-wrapper {
+    background-color: cl(black);
+    .plan-cont {
+        margin-top: 60px;
+    }
+    .plan-item {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column-reverse;
+        // height: 407px;
+        border-radius: 8px;
+        margin-left: 13px;
+        margin-right: 13px;
+    }
+    .plan-text {
+        font-size: 16px;
+        padding: 25px 25px 50px 25px;
+    }
+    .plan-title {
+        color: cl(text);
+    }
+    .plan-width {
+        padding-top: 5px;
+    }
+    .plan-price {
+        margin-top: 66px;
+        color: cl(text);
+        span {
+            color: cl(red);
+        }
+    }
+    .spring-price {
+        @include overTab {
+            padding-top: 25px;
+        }
+    }
+    .plan-img {
+        width: 322px;
+        width: 100%;
+    }
+
+    .service-cont {
+
+    }
+    .service-list {
+        margin-top: 90px;
+        display: block;
+        margin-left: 26px;
+        margin-right: 26px;
+        @include overTab {
+            display: flex;
+            margin-top: 100px;
+            margin-left: 160px;
+        }
+    }
+    .service-item {
+        height: 387px;
+        background-color: cl(lightgrey);
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+        box-shadow: 0px 3px 6px #00000029;
+        @include overTab {
+            width: 389px;
+        }
+        +.service-item {
+            margin-top: 20px;
+            @include overTab {
+                margin-left: 20px;
+                margin-top: 0;
+            }
+        }
+        .text {
+            .title {
+                font-size: 28px;
+                text-align: center;
+                margin-top: -221px;
+            }
+            .desc {
+                font-size: 18px;
+                margin-top: 30px;
+                text-align: justify;
+                margin-left: 24px;
+                margin-right: 24px;
+            }
+        }
+        .image {
+            margin: 0 auto;
+            width: 160px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}

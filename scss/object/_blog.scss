@@ -1,0 +1,57 @@
+.blog-wrapper {
+    color: cl(white);
+    background-color: cl(black);
+    .blog-title {
+        text-align: center;
+        padding-top: 80px;
+    }
+    .blog-list {
+        margin-left: 27px;
+        margin-right: 28px;
+        margin-top: 61px;
+        @include overTab {
+            margin-top: 64px;
+            // margin: 0 auto;
+        }
+    }
+    .row {
+        display: flex;
+        margin-top: 27px;
+        @include overTab {
+            margin-left: 111px;
+
+        }
+    }
+    dt {
+        background-color: cl(primary);
+        text-align: center;
+        height: 30px;
+        //↓同じ高さを指定することで、縦中央によせる
+        line-height: 30px;
+        font-size: 13px;
+        width: 75px;
+        @include overTab {
+            font-size: 14px;
+            width: 157px;
+        }
+    }
+    dd {
+        // border: 1px solid green;
+        flex: 1;
+        font-size: 16px;
+        text-decoration: underline;
+        margin-left: 20px;
+        @include overTab {
+            margin-left: 30px;
+            font-size: 24px;
+            width: 930px;
+        }
+    }
+    .blog-link {
+        margin: 0 auto;
+        margin-top: 52px;
+        @include overTab {
+            margin-top: 87px;
+        }
+    }
+}

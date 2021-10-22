@@ -1,0 +1,53 @@
+// COLORS
+// @include cl(black);
+//--------------------------------------------------
+
+$colors: (
+	white: #fff,
+	black: #000,
+	text: #333333,
+    grey: #6E6E6E,
+	lightgrey: #F2F2F2,
+    red: #FF0000,
+	primary: #4D0000,
+    gold: #B8860BEA,
+	beige: #FFFFDD,
+);
+
+//自作関数の定義
+@function cl($key) {
+	////////↑引数、@returnは必須
+	@return map-get($colors, $key);
+	//cl()の$keyには例えば外から#fffのような値が入る、そしてreturnで返り値として吐き出されもとの場所に入る
+}
+
+// FONT
+// @include TimesNewRoman;
+//--------------------------------------------------
+
+@mixin TimesNewRoman {
+	font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+}
+
+//レスポンシブ対応
+
+@mixin overTab {
+	@media print,screen and (min-width: 768px) {
+		@content;
+	}
+}
+//@contentはメディアクリエにつける（必須でつけなければならない？と思う）
+// UTILITY
+//これはPC版・SP版で要素の表示・非表示の切り替えが簡単にできる汎用クラス名です。例えばハンバーガーメニューのボタンはPC版では非表示にして、スマホ版では表示させたいですよね。その場合、ハンバーガーメニューのbutton要素に「_sp」というクラス名をつけるだけで、PC版表示時は「display: none;」で非表示になり、SP版表示時には「display: none;」が解除され、ハンバーガーメニューのボタンが表示されるようになります。逆に、PC版で表示させたいけどSP版で非表示にしたいといった場合は、「_pc」というクラス名を付ければいいので
+._sp {
+	@include overTab {
+		display: none;
+	}
+}
+
+._pc {
+	display: none;
+	@include overTab {
+		display: block;
+	}
+}

@@ -1,0 +1,36 @@
+/* page-thanks.php */
+.thanks {
+    background-color: black;
+    color: white;
+    .breadcrumb {
+        margin-left: 44px;
+        @include overTab {
+            margin-left: 110px;
+        }
+    }
+    .contact-thanks {
+        width: 80%;
+        margin: 0 auto;
+        @include overTab {
+            width: 100%;
+            margin: 0;
+        }
+    }
+    .thanks-text {
+        margin-top: 71px;
+        text-align: center;
+        font-size: 19px;
+        @include overTab {
+            font-size: 20px;
+        }
+        .a {
+            margin-top: 4px;
+        }
+    }
+
+    .link {
+        margin-top: 50px;
+        text-decoration: underline;
+        padding-bottom: 113px;
+    }
+}

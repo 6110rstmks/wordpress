@@ -1,0 +1,57 @@
+footer {
+    background-color: cl(primary);
+    color: cl(white);
+    @include overTab {
+        height: 288px;
+    }
+    .footer-nav {
+    }
+    .nav-list {
+        text-align: center;
+        padding-top: 62px;
+        @include overTab {
+            display: flex;
+            justify-content: center;
+            padding-top: 62px;
+        }
+    }
+    .nav-item {
+        @include overTab {
+            margin-left: 40px;
+        }
+
+        +.nav-item {
+            padding-top: 20px;
+            @include overTab {
+                padding-top: 0;
+            }
+        }
+        &:first-child {
+            @include overTab {
+
+                margin-right: 7px;
+            }
+        }
+        &:last-child {
+            @include overTab {
+
+                margin-left: 37px;
+            }
+        }
+    }
+    .private-item {
+        @include overTab {
+            margin-left: 33px;
+        }
+    }
+    .footer-logo {
+        margin: 0 auto;
+        margin-top: 62px;
+        width: 188px;
+        height: 72px;
+    }
+    .copy-right {
+        margin-top: 20px;
+        text-align: center;
+    }
+}
