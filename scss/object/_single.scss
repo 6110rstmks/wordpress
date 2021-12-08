@@ -60,17 +60,14 @@
         margin-top: 44px;
         @include overTab {
             font-size: 36px;
-
         }
-
     }
-
     .entry {
         @include overTab {
 
             display: flex;
         }
-        }
+    }
     //２カラムの左側の部分
     .single-entry {
         @include overTab {
@@ -99,7 +96,6 @@
     }
     .body {
         .image {
-
             @include overTab {
                 width: 200px;
                 margin: 0 auto;
@@ -198,5 +194,4 @@
             margin-top: 30px;
         }
     }
-
 }
