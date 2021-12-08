@@ -167,35 +167,23 @@ $query_args = array(//連想配列
 );
 $the_query = new WP_Query( $query_args );
 if ( $the_query->have_posts() ) :
-    //記事が存在した場合
     while ( $the_query->have_posts() ) :
         $the_query->the_post();
         $link = get_permalink($post->ID);
-        //permalinkは造語でurlのこと、つまりこれはurlを取得
-        //$post->IDはパラメーターの初期値
-        //これでsingle.phpのやつにとべる、page-blogの$link = get_permalink($post->ID);も同じ
         $title = get_the_title($post->ID);
-        //タイトルを取得（管理画面の投稿に投稿した記事のタイトルを$post->IDでとってこれる）
 ?>
-<!-- ifで＝もし投稿があれば、whileで＝投稿があるあいだは、the_postsで＝投稿を繰り返し表示する -->
             <div class="row">
                 <dt>お知らせ</dt>
-                <!-- dtはdifinition team -->
                 <dd><a href="<?php echo $link;?>"><?php echo $title;?></a></dd>
-                <!-- aタグのhref属性を使うことで -->
-                <!-- ddはdifinition description -->
             </div>
-            <!-- $linkはおそらくwordpressで設定すると予想 -->
 <?php
     endwhile;
-    //記事が存在した場合終了
 else:
-//記事が存在しなかった場合
     echo '<div class="row>';
     echo '<dd><a href="/" style="pointer-events: none;">すいません。ただいま記事を準備中です。<br>少々お待ちください。</a></dd>';
     echo '</div>';
 endif;
-WP_reset_query();//クエリをリセット（定義したもの｛ここでは$the_query）
+WP_reset_query();
 ?>
         </dl>
         <div class="cmn-link blog-link">
@@ -233,4 +221,4 @@ WP_reset_query();//クエリをリセット（定義したもの｛ここでは$
     </div>
 </section>
 
-<?php get_footer();//終了タグをかかないことが推奨されている
+<?php get_footer();
