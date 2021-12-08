@@ -27,8 +27,6 @@
         }
         .features-text {
             @include overTab {
-                //↓flex:1;が指定されているということは、親要素にdisplay:flex;が指定されているということ
-                //flex: 1;はflex-grow: 1;と同値でありfeatures-imgに50%指定していることから、その残りの50％にflexgrow1が指定され計算式より余白をfeatures-textが埋めつくす
                 flex: 1;
             }
         }
