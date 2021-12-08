@@ -1,5 +1,4 @@
 .top {
-    // padding-top: 9px;
     background-image: url(../image/top-mv_sp.png);
     background-size: cover;
     background-position: center;
@@ -21,7 +20,6 @@
         width: 100%;
         @include overTab {
             font-size: 50px;
-
         }
     }
 }
