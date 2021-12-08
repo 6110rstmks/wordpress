@@ -30,18 +30,14 @@ header {
         height: 30px;
         position: relative;
         appearance: none;
-        //キーボードを使用するユーザーにとって重要なものだけど枠がずれてしまうので消しておく
         outline: none;
         border: none;
         background: transparent;
-        //↓いらない
-        // font: inherit;
         @include overTab {
             display: none;
         }
         &.-active {
             span {
-                //spanを中央にするやつ
                 top: 0;
                 bottom: 0;
                 margin: auto;
@@ -78,7 +74,6 @@ header {
     }
     .nav {
         padding-top: 128px;
-        //↓fixedにする理由はスクロールしても常に同じポジションに表示したいから
         position: fixed;
         left: o;
         top: 0;
@@ -90,12 +85,9 @@ header {
         @include overTab {
             top: 20px;
             right: 0;
-            //↓initialは初期値でwidthの初期値はauto,もともとwidthは設定していなかったのでこれはいる
             width: initial;
-            //↓background-colorの初期値はtransparent
             background-color: transparent;
             margin-top: 19px;
-            //↓これで背景色の黒を初期化
             padding-top: 0;
             visibility: visible;
             opacity: 1;
