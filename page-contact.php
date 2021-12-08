@@ -19,8 +19,7 @@ breadcrumb( $post->ID );
 while( have_posts() ) {
     the_post();
     the_content();
-    //mw wp formの完了画面メッセージに入力した内容を読み込むテンプレートタグはthe_content()
-}//the_title()は14.15行目に記述してあるから不要
+}
 ?>
             </div>
         </div>
