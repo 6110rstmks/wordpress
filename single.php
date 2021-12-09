@@ -17,16 +17,15 @@ if ( have_posts() ):
     while ( have_posts() ):
         the_post();
         $content = get_the_content();
-        //記事本文
         $category = get_the_category()[0]->name;
         $title = get_the_title();
         $date = get_the_modified_date( 'Y-m-d', $post->ID );
-        $thumbnail = (get_the_post_thumbnail_url( $post->ID, 'medium' )) ?/*条件が正しい時の値→ */ get_the_post_thumbnail_url( $post->ID/*postには投稿の情報が入ったオブジェクト関数*/, 'medium' )/*サイズは、’thumbnail’, ‘medium’, ‘large’, ‘full’, の中から好きにしてください。*/ :/*条件がまちがっているときの値 */ get_template_directory_uri().$NO_IMAGE_URL;//get_template_directory_uriはテーマディレクトリのパスを出力する関数
+        $thumbnail = (get_the_post_thumbnail_url( $post->ID, 'medium' )) ? get_the_post_thumbnail_url( $post->ID, 'medium' ) : get_template_directory_uri().$NO_IMAGE_URL;
         $thumbID = get_post_thumbnail_id( $post->ID );
         $alt = get_post_meta($thumbID, '_wp_attachment_image_alt', true);
         $categorys = get_the_category();//カテゴリ
         $categoryList = '';
-        foreach( $categorys as $val ){//$categorysのデータを一つずつとりだして$valへいれてる
+        foreach( $categorys as $val ){
             $categoryList = ($categoryList) ? $categoryList.','.$val->slug : $categoryList.$val->slug;//.で文字列の連結(progate参照)
         };
 ?>
@@ -43,7 +42,6 @@ if ( have_posts() ):
                 <article class="single-entry">
                     <div class="wrapper">
                         <div class="info">
-                            <!-- snsシェアボタン -->
                             <p class="time">
                                 <time datetime="<?php echo $date ;?>"><?php echo $date ;?></time>
                             </p>
@@ -74,7 +72,6 @@ $query_args = array(
     'posts_per_page'=>5,
     'orderby'=>'menu_order',
     'category_name'=>$categoryList
-    //カテゴリーのスラッグ（カテゴリ名ではありません）を使用します
 );
 $the_query = new WP_Query( $query_args );
 if( $the_query->have_posts() ):
@@ -86,7 +83,6 @@ if( $the_query->have_posts() ):
     while( $the_query->have_posts() ):
         $the_query->the_post();
         $link = get_permalink( $post->ID );
-        //$postのなかに格納されているIDにアクセス
         $thumbnail = (get_the_post_thumbnail_url( $post->ID, 'medium' )) ? get_the_post_thumbnail_url( $post->ID, 'medium' ) : get_template_directory_uri().$NO_IMAGE_URL;
         $title = get_the_title( $post->ID );
 ?>
@@ -113,7 +109,6 @@ $query_args = array(
     'order' => 'DESC',
     'post_per_pages' =>5,
     'tag' => 'recommend',
-    //wordpressの投稿のタグにrecommendを設定する
 );
 $the_query = new WP_Query( $query_args );
 if ( $the_query->have_posts() ):
