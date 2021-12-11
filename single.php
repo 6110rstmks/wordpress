@@ -30,7 +30,6 @@ if ( have_posts() ):
         };
 ?>
             <header class="single-title">
-            <!-- ↑ここは別にdivでもいい -->
                 <div class="category">
                     <?php echo $category; ?>
                 </div>
